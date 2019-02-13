@@ -47,6 +47,7 @@ module Fog
         end
 
         def hardware_configuration=(hardware_configuration)
+          hardware_configuration = hardware_configuration.attributes if hardware_configuration.respond_to? :attributes
           @hardware_configuration = service.hardware_configurations.new(hardware_configuration)
         end
 
